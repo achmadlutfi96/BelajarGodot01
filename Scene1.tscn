@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://o81tuci3lmli"]
+
+[ext_resource type="Texture2D" uid="uid://brl5pu2hjl5hw" path="res://icon.svg" id="1_2qmf6"]
+[ext_resource type="Script" path="res://Scripts/Main.gd" id="1_vt1ot"]
+[ext_resource type="Script" path="res://Scripts/Gambar3.gd" id="3_2mrcl"]
+
+[node name="MainNode" type="Node2D"]
+script = ExtResource("1_vt1ot")
+
+[node name="Gambar1" type="Sprite2D" parent="."]
+position = Vector2(267, 175)
+texture = ExtResource("1_2qmf6")
+
+[node name="Gambar3" type="Sprite2D" parent="Gambar1"]
+position = Vector2(200, -1)
+texture = ExtResource("1_2qmf6")
+
+[node name="Gambar2" type="Sprite2D" parent="."]
+position = Vector2(277, 352)
+texture = ExtResource("1_2qmf6")
+
+[node name="Gambar3" type="Sprite2D" parent="Gambar2"]
+position = Vector2(200, -1)
+texture = ExtResource("1_2qmf6")
+script = ExtResource("3_2mrcl")

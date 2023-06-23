@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://giwcsuhanege"]
+
+[ext_resource type="Script" path="res://Scripts/MainScene3.gd" id="1_fdg8u"]
+[ext_resource type="Texture2D" uid="uid://dp8orhbl4pc7f" path="res://gorilla.png" id="1_u31ow"]
+[ext_resource type="Texture2D" uid="uid://6lkl3lb7ackc" path="res://duck.png" id="2_767i1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_me6s4"]
+radius = 64.195
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wkwnx"]
+size = Vector2(129, 127)
+
+[node name="MainNode" type="Node2D"]
+script = ExtResource("1_fdg8u")
+
+[node name="KarakterBody" type="CharacterBody2D" parent="."]
+position = Vector2(651, 182)
+motion_mode = 1
+
+[node name="Gorilla" type="Sprite2D" parent="KarakterBody"]
+texture = ExtResource("1_u31ow")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KarakterBody"]
+shape = SubResource("CircleShape2D_me6s4")
+
+[node name="KarakterBody2" type="CharacterBody2D" parent="."]
+position = Vector2(462, 185)
+
+[node name="Gorilla" type="Sprite2D" parent="KarakterBody2"]
+texture = ExtResource("1_u31ow")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="KarakterBody2"]
+polygon = PackedVector2Array(-53, -35, -63, -15, -64, 7, -59, 25, -51, 40, -33, 54, -12, 64, 12, 64, 34, 55, 50, 42, 59, 26, 64, 0, 60, -22, 51, -38, 36, -52, 15, -62, -16, -61, -32, -54, -45, -44)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(1002, 180)
+
+[node name="Duck" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("2_767i1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_wkwnx")
